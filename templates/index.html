@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
   </head>
   <body>
     <div class="container">
@@ -24,20 +24,17 @@
       </div>
 
       <div class="main-list">
+        {% for i in range(3) %}
           <div class="list-columm">
-          {% for store in stores  %}
-              {% set title = store['title'] %}
-              {% set address = store['address'] %}
           <div class="list">
             <div class="soup-img-box"><img src="../static/image/soup2.jpeg" class="soup-img"></div>
             <div class="soup-desc-box">
             <div class="soup-title"> <div class="title-stick"></div>
-                {{ title }}</div>
-            <div class="soup-title-desc">{{ address }}</div>
+            소문난밀양돼지국밥</div>
+            <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
             <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
           </div>
           </div>
-          {% endfor %}
           <div class="list">
             <div class="soup-img-box"><img src="../static/image/soup2.jpeg" class="soup-img"></div>
             <div class="soup-desc-box">
@@ -55,58 +52,7 @@
           </div>
           </div>
         </div>
-        <div class="list-columm">
-            <div class="list">
-                <div class="soup-img-box"><img src="../static/image/soup1.jpeg" class="soup-img"></div>
-                <div class="soup-desc-box">
-                <div class="soup-title"> <div class="title-stick"></div>소문난밀양돼지국밥</div>
-                <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-                <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-              </div>
-              </div>
-            <div class="list">
-              <div class="soup-img-box"><img src="../static/image/soup2.jpeg" class="soup-img"></div>
-              <div class="soup-desc-box">
-              <div class="soup-title"> <div class="title-stick"></div>소문난밀양돼지국밥</div>
-              <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-              <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-            </div>
-            </div>
-            <div class="list">
-              <div class="soup-img-box"><img src="../static/image/soup3.jpeg" class="soup-img"></div>
-              <div class="soup-desc-box">
-              <div class="soup-title"> <div class="title-stick"></div>소문난밀양돼지국밥</div>
-              <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-              <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-            </div>
-            </div>
-          </div>
-          <div class="list-columm">
-            <div class="list">
-                <div class="soup-img-box"><img src="../static/image/soup1.jpeg" class="soup-img"></div>
-                <div class="soup-desc-box">
-                <div class="soup-title"> <div class="title-stick"></div>소문난밀양돼지국밥</div>
-                <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-                <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-              </div>
-              </div>
-            <div class="list">
-              <div class="soup-img-box"><img src="../static/image/soup2.jpeg" class="soup-img"></div>
-              <div class="soup-desc-box">
-              <div class="soup-title"> <div class="title-stick"></div>소문난밀양돼지국밥</div>
-              <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-              <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-            </div>
-            </div>
-            <div class="list">
-              <div class="soup-img-box"><img src="../static/image/soup3.jpeg" class="soup-img"></div>
-              <div class="soup-desc-box">
-              <div class="soup-title"> <div class="title-stick"></div>소문난밀양돼지국밥</div>
-              <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-              <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-            </div>
-            </div>
-          </div>
+        {% endfor %}
       </div>
 
       </div>
