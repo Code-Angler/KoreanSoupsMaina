@@ -1,3 +1,7 @@
+.container {
+  height: 130vh;
+}
+
 .review-box {
   width: 100%;
   display: flex;
