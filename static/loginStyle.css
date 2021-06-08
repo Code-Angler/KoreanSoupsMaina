@@ -1,0 +1,104 @@
+.container {
+  height: 140vh;
+}
+
+.section-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  width: 80%;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 200px;
+  padding-left: 50px;
+  font-family: "East Sea Dokdo", cursive;
+}
+
+.subtitle {
+  font-size: 30px;
+  padding-left: 50px;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+.is-sparta {
+  color: black !important;
+}
+
+.button.is-sparta {
+  background-color: #bdbdbd;
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.button.is-sparta.is-outlined {
+  background-color: transparent;
+  border-color: #bdbdbd;
+  color: #bdbdbd !important;
+}
+
+.help {
+  color: gray;
+}
+
+.hero.has-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background.is-transparent {
+  opacity: 0.3;
+}
+
+.banner-box-login {
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./image/1623060580333.jpg");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.empty-box-login {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+
+.membership-box {
+  padding: 30px;
+  color: #fafafa;
+  font-size: 35px;
+  z-index: 10;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #fafafa;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
+}

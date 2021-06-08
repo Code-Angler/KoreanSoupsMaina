@@ -1,6 +1,24 @@
 @import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 @import url("./topSection.css");
 @import url("./maincontainer.css");
+@import url("./review.css");
+
+@font-face {
+  font-family: "ChosunKg";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKg.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChosunSg";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Chosunilbo_myungjo";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
