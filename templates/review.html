@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <!-- Webpage Title -->
+        <title>로그인 | 국밥매니아</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bulma CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <!-- Font Awesome CSS -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Brush+Script&family=Nanum+Myeongjo&display=swap"
+              rel="stylesheet">
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0050f57ace903dff02057bc8548ea3f"></script>
+
+<link rel="stylesheet" href="../static/style.css">
+<link rel="stylesheet" href="../static/loginStyle.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="top-section">
+            <div class="top-section-box">
+              <div class="logo">진국</div>
+              <div class="nav-desc">국밥에 진심인 어려분을 환영합니다</div>
+              <div class="login" onclick="changeToLogin()"><img src="../static/image/login.svg" /></div>
+            </div>
+        </div>
+        <div class="empty-box-review">
+            <div class="membership-box">Review</div>
+        </div>
+
+        <div class="review-box">
+            <div class="review-image-box"><img src="../static/image/" alt=""></div>
+            <div class="review-desc-box">
+                <div class="review-title">소문난밀양돼지국밥</div>
+                <div class="review-address">
+                    <div class="address-name">주소</div>
+                    <div class="address-content">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
+                </div>
+                <div class="review-site-address">
+                    <div class="site-name">사이트 주소</div>
+                    <div class="site-content">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
+                </div>
+                <div class="review-phone-number">
+                    <div class="phone-name">전화번호</div>
+                    <div class="phone-content">055-234-1324</div>
+                </div>
+                <div class="review-run-time">
+                    <div class="run-time-name">운영시간</div>
+                    <div class="run-time-content">06:00-21:00</div>
+                </div>
+                <div class="review-write-box"> <i class="far fa-edit"></i>&nbsp리뷰 작성하기</div>
+            </div>
+        </div>
+
+        <div id="map" style="width:100%;height:350px;"></div>
+
+    
+          </div>
+          <div class="banner-box-review" onclick="changeToMain()"></div>
+        </div>
+        
+        
+        
+        <script src="../static/JS/kakaoMap.js"></script>
+       <script src="../static/JS/app.js"></script>
+        <script src="../static/JS/login.js"></script>
+    </body>
+</html>
