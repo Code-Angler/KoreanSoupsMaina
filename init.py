@@ -1,6 +1,5 @@
 import crawling
-from selenium import webdriver
-import time
+
 from pymongo import MongoClient
 from flask import Flask
 
@@ -9,8 +8,6 @@ app = Flask(__name__)
 client = MongoClient('localhost', 27017)
 db = client.koransoups
 
-start = time.time()
-driver = webdriver.Chrome('C:/Users/molin/AppData/Local/Programs/Python/Python38/chromedriver.exe')
 
 crawling.sel('서울특별시 국밥')
 crawling.sel('부산광역시 국밥')
@@ -36,4 +33,3 @@ print("......")
 print("....")
 print("init2 하러갑시다")
 
-print("time :", time.time() - start)

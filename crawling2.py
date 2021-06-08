@@ -1,37 +1,48 @@
-import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 from pymongo import MongoClient
-from flask import Flask, render_template, jsonify, request
+from flask import Flask
 
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
 db = client.koransoups
-
-start = time.time()
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 driver = webdriver.Chrome('C:/Users/molin/AppData/Local/Programs/Python/Python38/chromedriver.exe')
-soup_stores = list(db.crawling_stores.find({}, {'_id':False}))
 
-for store in soup_stores:
-    link_url = store["link_url"]
-    driver.implicitly_wait(5)
-    driver.get(link_url)
-    # req = driver.page_source
-    # soup = BeautifulSoup(req, 'html.parser')
-    data = requests.get(link_url, headers=headers)
-    soup = BeautifulSoup(data.text, 'html.parser')
+def img(locations):
+    url = ('https://search.daum.net/nate?thr=sbma&w=tot&q=' +locations)
+    driver.get(url)
+    time.sleep(5) # 5초 동안 페이지 로딩 기다리기
+    more = driver.find_element_by_xpath('// *[ @ id = "poiColl"] / div[2] / div[3] / div / a / span[2]')
+    more.click()
+    more_1 = driver.find_element_by_xpath('// *[ @ id = "poiColl"] / div[2] / div[3] / div / a')
+    more_1.click()
+    driver.implicitly_wait(10)
+    time.sleep(5)
+    req = driver.page_source
+    soup = BeautifulSoup(req, 'html.parser')
+    time.sleep(5)
+    divs = soup.select('#poiColl > div.coll_cont.poi_cont > div.wrap_place > ul > li')
 
-    time.sleep(3)
-    # print(soup)
-    img = driver.find_elements_by_css_selector("#mArticle > div.cont_essential > div:nth-child(1) > div.details_present > a > span.bg_present > span")
-    menu = soup.select_one('#mArticle > div.cont_menu > ul')
+    driver.implicitly_wait(10)
+
+    for div in divs:
+        driver.implicitly_wait(10)
+
+        img_url = div.select_one('div.cont_info > div.wrap_thumb > img')['src']
+        # title = div.select_one('div.cont_info > div.wrap_cont > a').text
+
+        # print(title) # 크롤링 체크할시 활성화 하면 좋아서 keep
+
+        db.crawling_stores.update_one({'img_url':""},{'$set':{'img_url':img_url}})
+
+    print(locations, "완료")
 
 
-    print(img)
-    # print(menu)
-    time.sleep(15)
-    driver.quit()  # 끝나면 닫아주기
-print("time :", time.time() - start)
+
+
+
+
+
