@@ -2,7 +2,7 @@ import crawling
 from selenium import webdriver
 import time
 from pymongo import MongoClient
-from flask import Flask, render_template, jsonify, request
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -30,7 +30,10 @@ crawling.sel('경상북도 국밥')
 crawling.sel('경상남도 국밥')
 crawling.sel('제주특별자치도 국밥')
 
-print("")
-print("드디어 끝")
+
+print(".......")
+print("......")
+print("....")
+print("init2 하러갑시다")
 
 print("time :", time.time() - start)
