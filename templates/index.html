@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-    <link rel="stylesheet" href="../static/css/style.css"/>
-</head>
-<body>
-<div class="container">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>진국</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
     <div class="top-section">
+
         <div class="top-section-box">
             <div class="logo">진국</div>
             <div class="nav-desc">국밥에 진심인 어려분을 환영합니다</div>
@@ -18,32 +20,30 @@
     <div class="title-text-block">
         <h3 class="title-text">
             <span class="up-title-text">뜨끈한 국밥을 찾아서</span> <br/>
-            진심 국밥
+            <span>진</span><span class="weak-title">심</span> <span>국</span><span class="weak-title">밥</span>
             <p class="title-desc">'진국'은 국밥맛집검색 전문 사이트입니다.</p>
         </h3>
     </div>
-</div>
-<div class="main-list">
-    {% for store in stores %}
-        {% set title = store['title'] %}
-        {% set address = store['address'] %}
-        {% set img_url = store['img_url'] %}
-        <div class="list">
-            <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
-            <div class="soup-desc-box">
-                <div class="soup-title">
-                    <div class="title-stick"></div>
-                    {{ title }}
-                </div>
-                <div class="soup-title-desc">{{ address }}</div>
-                <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+
+    <div class="main-list">
+        {% for store in stores %}
+            {% set title = store['title'] %}
+            {% set address = store['address'] %}
+            {% set img_url = store['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-</div>
-
-
+        {% endfor %}
+    </div>
 </div>
 <div class="footers">
     <div class="footer-logo"><img src="../static/image/logoblack.png" class="logo-img"></div>
