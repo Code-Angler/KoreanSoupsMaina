@@ -25,8 +25,10 @@ db = client.week1_pj
 
 @app.route('/')
 def home():
+    # 크롤링한 데이터 값 jinja 로 보내기 위한 코드
     db_stores = list(db.crawling_stores.find({}, {'_id': False}))
     return render_template('index.html', stores=db_stores)
+
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
