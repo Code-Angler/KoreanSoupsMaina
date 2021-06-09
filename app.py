@@ -1,10 +1,9 @@
-
-
 from pymongo import MongoClient
 import jwt
 import datetime
 import hashlib
 from flask import Flask, render_template, jsonify, request, redirect, url_for
+from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta
 
 
@@ -14,13 +13,9 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 
 SECRET_KEY = 'SPARTA'
 
-#성경 로컬환경의 DB
-client = MongoClient('localhost', 27017)
-db = client.koransoups
 
-#호진님 로컬환경의 DB
-# client = MongoClient('localhost', 27017)
-# db = client.week1_pj
+client = MongoClient('mongodb://test:test@localhost', 27017)
+db = client.koransoups
 
 
 

@@ -6,8 +6,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.koransoups
+
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 driver = webdriver.Chrome('C:/Users/molin/AppData/Local/Programs/Python/Python38/chromedriver.exe')
 
@@ -31,7 +32,8 @@ def img(locations):
     for div in divs:
         driver.implicitly_wait(10)
 
-        img_url = div.select_one('div.cont_info > div.wrap_thumb > img')['src']
+        img_url = div.select_one('div.cont_info > div.wrap_thumb > img')['src'].replace("C58x58.q80", "T800x0.q80", 1)
+
         # title = div.select_one('div.cont_info > div.wrap_cont > a').text
 
         # print(title) # 크롤링 체크할시 활성화 하면 좋아서 keep

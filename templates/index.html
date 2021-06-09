@@ -23,13 +23,11 @@
         </h3>
     </div>
 </div>
-
-
-{% for store in stores %}
-    {% set title = store['title'] %}
-    {% set address = store['address'] %}
-    {% set img_url = store['img_url'] %}
-    <div class="main-list">
+<div class="main-list">
+    {% for store in stores %}
+        {% set title = store['title'] %}
+        {% set address = store['address'] %}
+        {% set img_url = store['img_url'] %}
         <div class="list">
             <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
             <div class="soup-desc-box">
@@ -42,8 +40,9 @@
                 </div>
             </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
+</div>
+
 
 </div>
 <div class="footers">
