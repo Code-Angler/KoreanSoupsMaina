@@ -1,13 +1,13 @@
 function changeToLogin() {
-  window.location.href = "../templates/login.html";
+  window.location.href = "/login";
 }
 
 function changeToMain() {
-  window.location.href = "../templates/index.html";
+  window.location.href = "/";
 }
 
 function changeToReview() {
-  window.location.href = "../templates/review.html";
+  window.location.href = "/review";
 }
 
 function viewSoupList() {
