@@ -1,59 +1,27 @@
-//---테스트 url버전
-function changeToLogin() {
-  window.location.href = "../templates/login.html";
-}
-
-function changeToMain() {
-  window.location.href = "../templates/index.html";
-}
-
-function changeToReview() {
-  window.location.href = "../templates/review.html";
-}
-
-//---서버 url버전
+// //---테스트 url버전
 // function changeToLogin() {
-//   window.location.href = "/login";
+//   window.location.href = "../templates/login.html";
 // }
 
 // function changeToMain() {
-//   window.location.href = "/";
+//   window.location.href = "../templates/index.html";
 // }
 
 // function changeToReview() {
-//   window.location.href = "/review";
+//   window.location.href = "../templates/review.html";
 // }
 
-function viewSoupList() {
-  $("div.main-list").empty();
-  let n = 0;
-
-  for (let i = 0; i < 12; i++) {
-    let soupImgHtml = `<div class="list">
-  <div class="soup-img-box"><img src="../static/image/soup2.jpeg" class="soup-img"></div>
-  <div class="soup-desc-box">
-  <div class="soup-title"> <div class="title-stick"></div>
-  ${i}</div>
-  <div class="soup-title-desc">경상남도 창원시 마산회원구 내서읍 호계리 292-8</div>
-  <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span></div>
-</div>
-</div> `;
-    $("div.main-list").append(soupImgHtml);
-    console.log("div를 생성합니다. ");
-  }
+// ---서버 url버전
+function changeToLogin() {
+  window.location.href = "/login";
 }
 
-window.onload = viewSoupList();
-
-function showOrHidden() {
-  let reviewImage = document.querySelector(".review-image-box");
-  let check = true;
-
-  if (check) {
-    reviewImage.style.display = "none";
-    check = false;
-  } else {
-    reviewImage.style.display = "grid";
-    check = true;
-  }
+function changeToMain() {
+  window.location.href = "/";
 }
+
+function changeToReview() {
+  window.location.href = "/review";
+}
+
+

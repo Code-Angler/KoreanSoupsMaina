@@ -19,10 +19,6 @@
 .review-map {
   height: 600px;
   width: 100%;
-  overflow: hidden;
-  background-image: url("../image/exampleMap.jpeg");
-  background-size: cover;
-  background-position: center center;
 }
 
 .review-down-box {
