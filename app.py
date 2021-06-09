@@ -15,6 +15,7 @@ SECRET_KEY = 'SPARTA'
 
 
 client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
+# client = MongoClient('localhost', 27017)
 db = client.koransoups
 
 
@@ -39,6 +40,11 @@ def home():
 def login():
     msg = request.args.get("msg")
     return render_template('login.html', msg=msg)
+
+@app.route('/review')
+def review():
+    msg = request.args.get("msg")
+    return render_template('review.html', msg=msg)
 
 
 @app.route('/user/<username>')

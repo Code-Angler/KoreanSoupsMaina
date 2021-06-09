@@ -7,6 +7,8 @@ from flask import Flask
 app = Flask(__name__)
 
 client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
+# client = MongoClient('localhost', 27017)
+
 db = client.koransoups
 
 driver = webdriver.Chrome('C:/Users/molin/AppData/Local/Programs/Python/Python38/chromedriver.exe')
