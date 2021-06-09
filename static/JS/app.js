@@ -1,14 +1,28 @@
+//---테스트 url버전
 function changeToLogin() {
-  window.location.href = "/login";
+  window.location.href = "../templates/login.html";
 }
 
 function changeToMain() {
-  window.location.href = "/";
+  window.location.href = "../templates/index.html";
 }
 
 function changeToReview() {
-  window.location.href = "/review";
+  window.location.href = "../templates/review.html";
 }
+
+//---서버 url버전
+// function changeToLogin() {
+//   window.location.href = "/login";
+// }
+
+// function changeToMain() {
+//   window.location.href = "/";
+// }
+
+// function changeToReview() {
+//   window.location.href = "/review";
+// }
 
 function viewSoupList() {
   $("div.main-list").empty();
@@ -30,3 +44,16 @@ function viewSoupList() {
 }
 
 window.onload = viewSoupList();
+
+function showOrHidden() {
+  let reviewImage = document.querySelector(".review-image-box");
+  let check = true;
+
+  if (check) {
+    reviewImage.style.display = "none";
+    check = false;
+  } else {
+    reviewImage.style.display = "grid";
+    check = true;
+  }
+}
