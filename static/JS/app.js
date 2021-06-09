@@ -23,5 +23,3 @@ function changeToMain() {
 function changeToReview() {
   window.location.href = "/review";
 }
-
-

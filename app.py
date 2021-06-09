@@ -1,11 +1,9 @@
-from flask import Flask, render_template, request, jsonify
-from pymongo import MongoClient
-
 from pymongo import MongoClient
 import jwt
 import datetime
 import hashlib
 from flask import Flask, render_template, jsonify, request, redirect, url_for
+from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta
 
 
@@ -15,26 +13,26 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 
 SECRET_KEY = 'SPARTA'
 
-client = MongoClient('localhost', 27017)
+
+client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
 db = client.koransoups
 
-client = MongoClient('localhost', 27017)
-db = client.week1_pj
 
 
 @app.route('/')
 def home():
+    # 크롤링한 데이터 값 jinja 로 보내기 위한 코드
     db_stores = list(db.crawling_stores.find({}, {'_id': False}))
     return render_template('index.html', stores=db_stores)
-    token_receive = request.cookies.get('mytoken')
-    try:
-        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
 
-        return render_template('index.html')
-    except jwt.ExpiredSignatureError:
-        return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
-    except jwt.exceptions.DecodeError:
-        return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
+    # try:
+    #     payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+    #
+    #     return render_template('index.html')
+    # except jwt.ExpiredSignatureError:
+    #     return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
+    # except jwt.exceptions.DecodeError:
+    #     return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
 
 
 @app.route('/login')

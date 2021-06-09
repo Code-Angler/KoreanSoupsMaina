@@ -6,7 +6,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
 db = client.koransoups
 
 
@@ -14,7 +14,7 @@ def sel(locations):
     driver = webdriver.Chrome('C:/Users/molin/AppData/Local/Programs/Python/Python38/chromedriver.exe')
     driver.implicitly_wait(5)
     driver.get("https://map.kakao.com/link/search/" + locations)
-    time.sleep(7) # 7초 동안 페이지 로딩 기다리기(이미지가 자꾸 바뀌는 페이지는 필요)
+    time.sleep(7) # 3초 동안 페이지 로딩 기다리기(이미지가 자꾸 바뀌는 페이지는 필요)
     req = driver.page_source
     soup = BeautifulSoup(req, 'html.parser')
     more = driver.find_element_by_xpath('//*[@id="info.main.options"]/li[2]/a')
@@ -37,7 +37,6 @@ def sel(locations):
             phone = number.text
             link_url = detail['href']
             print(title)
-            print(address)
 
 
 
@@ -53,7 +52,7 @@ def sel(locations):
             db.crawling_stores.insert_one(doc)
 
     print(locations,"완료")
-    print("총 2분 걸릴거야")
+    print("대략 10분 걸릴거야 , 쉬고있으셩!!")
 
 
 
