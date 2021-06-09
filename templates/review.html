@@ -25,8 +25,8 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0050f57ace903dff02057bc8548ea3f"></script>
 
-<link rel="stylesheet" href="../static/style.css">
-<link rel="stylesheet" href="../static/loginStyle.css">
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/review.css">
     </head>
 
     <body>
@@ -34,17 +34,30 @@
         <div class="container">
             <div class="top-section">
             <div class="top-section-box">
-              <div class="logo">진국</div>
+              <div class="logo"><img src="../static/image/logo.png" class="logo-img"></div>
               <div class="nav-desc">국밥에 진심인 어려분을 환영합니다</div>
               <div class="login" onclick="changeToLogin()"><img src="../static/image/login.svg" /></div>
             </div>
         </div>
         <div class="empty-box-review">
-            <div class="membership-box">Review</div>
+            <div class="review-name-box">Review</div>
         </div>
 
         <div class="review-box">
-            <div class="review-image-box"><img src="../static/image/" alt=""></div>
+            <div class="review-map"></div>
+            <div class="review-down-box">
+                <div class="review-detail-box">
+                    <div class="detail-title">Contact here</div>
+                    <div class="detail-real">
+                        <div class="detail-address"></div>
+                        <div class="detail-phone"></div>
+                        <div class="detail-email"></div>
+                        <div class="detail-runtime"></div>
+                    </div>
+                </div>
+                <div class="review-write-box"></div>
+            </div>
+            <!-- <div class="review-image-box"><img src="../static/image/soup1.jpeg" alt=""></div>
             <div class="review-desc-box">
                 <div class="review-title">소문난밀양돼지국밥</div>
                 <div class="review-address">
@@ -64,13 +77,24 @@
                     <div class="run-time-content">06:00-21:00</div>
                 </div>
                 <div class="review-write-box"> <i class="far fa-edit"></i>&nbsp리뷰 작성하기</div>
-            </div>
+            </div> -->
         </div>
 
         <div id="map" style="width:100%;height:350px;"></div>
 
     
           </div>
+
+          <div class="footers">
+            <div class="footer-logo"><img src="../static/image/logoblack.png" class="logo-img"></div>
+            <div class="footer-menu">
+                <div class="footer-menus">Main</div>
+                <div class="footer-menus">Login</div>
+                <div class="footer-menus">Detail</div>
+                <div class="footer-menus">Contact</div>
+            </div>
+            <div class="footer-copyright">Copyright © 2021 Hanghae Team5</div>
+        </div>
           <div class="banner-box-review" onclick="changeToMain()"></div>
         </div>
         

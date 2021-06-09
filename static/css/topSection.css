@@ -1,6 +1,6 @@
 .container {
   width: 1280px;
-  height: 200vh;
+  height: 300vh;
   margin: auto;
   overflow: visible;
 }
@@ -22,6 +22,9 @@
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 50px;
 }
 

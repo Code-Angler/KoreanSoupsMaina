@@ -1,0 +1,88 @@
+.container {
+  height: 160vh;
+}
+
+.review-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 1200px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12),
+    -10px -10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.review-down-box {
+  display: flex;
+}
+
+.review-map {
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url("../image/exampleMap.jpeg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.review-down-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.review-name-box {
+  padding: 30px;
+  color: #fafafa;
+  font-size: 35px;
+  z-index: 10;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #fafafa;
+}
+.review-detail-box {
+  width: 100%;
+  height: 600px;
+  padding: 50px;
+  border-right: 1px solid #bdbdbd33;
+}
+
+.detail-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-real {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.detail-real div {
+  width: 150px;
+  height: 150px;
+  background-color: antiquewhite;
+  border: 1px solid black;
+  margin: 0px;
+  opacity: 1;
+}
+
+.banner-box-review {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../image/1623060580333.jpg");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.empty-box-review {
+  width: 100%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
