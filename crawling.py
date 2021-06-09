@@ -17,11 +17,11 @@ def sel(locations):
     driver.implicitly_wait(5)
     driver.get("https://map.kakao.com/link/search/" + locations)
     time.sleep(7) # 3초 동안 페이지 로딩 기다리기(이미지가 자꾸 바뀌는 페이지는 필요)
-    req = driver.page_source
-    soup = BeautifulSoup(req, 'html.parser')
     more = driver.find_element_by_xpath('//*[@id="info.main.options"]/li[2]/a')
     more.send_keys('\n')
-    time.sleep(7)
+    time.sleep(5)
+    req = driver.page_source
+    soup = BeautifulSoup(req, 'html.parser')
     lis = soup.select("#info\.search\.place\.list > li")
     for li in lis:
 
@@ -55,6 +55,5 @@ def sel(locations):
 
     print(locations,"완료")
     print("대략 10분 걸릴거야 , 쉬고있으셩!!")
-
 
 
