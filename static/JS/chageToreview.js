@@ -37,8 +37,10 @@ function changeToReview(index) {
 }
 
 function checkRevieOrLogin() {
+  document.querySelector(".login-icon").src = localStorage.getItem("src");
   const pageName = document.querySelector(".page-name")?.textContent;
   console.log(pageName);
   if (pageName == "Review") changeReview();
 }
+
 window.onload = checkRevieOrLogin();
