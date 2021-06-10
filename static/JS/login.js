@@ -29,6 +29,7 @@ function sign_in() {
       if (response["result"] == "success") {
         $.cookie("mytoken", response["token"], { path: "/" });
         window.location.replace("/");
+        localStorage.setItem("src", "../static/image/logincheck.svg");
       } else {
         alert(response["msg"]);
       }
