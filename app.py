@@ -536,6 +536,46 @@ def save_img():
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("home"))
 
+
+## API 역할을 하는 부분
+@app.route('/review', methods=['POST'])
+def write_review():
+    #title_receive로 클라이언트가 준 title 가져오기
+    title_receive = request.form['title_give']
+    #review_receive로 클라이언트가 준 review 가져오기
+    review_receive = request.form['review_give']
+
+    #DB에 삽입할 review 만들기
+    doc = {
+        'title': title_receive,
+        'review': review_receive,
+    }
+
+    db.miniProject.insert_one(doc)
+
+    #성공 여부 & 성공 메시지 반환
+    return jsonify({'msg': '저장완료!'})
+
+
+    #삭제 기능
+@app.route('/deleteReview', methods=['POST'])
+def delete_review():
+    title_receive = request.form['title_give']
+    review_receive = request.form['review_give']
+    db.miniProject.delete_one({'title': title_receive, 'review': review_receive})
+    return jsonify({'msg': '삭제 완료!'})
+
+
+
+##  GET
+@app.route('/review', methods=['GET'])
+def read_reviews():
+    reviews = list(db.miniProject.find({}, {'_id': False}))
+    return jsonify({'all_reviews': reviews})
+
+
+
+
 '''
 
 @app.route('/test', methods=['GET'])

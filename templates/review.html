@@ -103,9 +103,46 @@
         </div>
         
         
-        <script src="../static/JS/chageToreview.js"></script>
-        <script src="../static/JS/kakaoMap.js"></script>
-       <script src="../static/JS/app.js"></script>
-        <script src="../static/JS/login.js"></script>
+        <script src="../static/js/chageToreview.js"></script>
+        <script src="../static/js/kakaoMap.js"></script>
+       <script src="../static/js/app.js"></script>
+        <script src="../static/js/login.js"></script>
+    <script src="../static/js/review.js"></script>
     </body>
 </html>
+
+
+// 민기님 파트 입니다.
+//함수구현 관련 코드는 (id=reviews-box; id=title; id=soupReview) 이 세부분 참조 하시면 됩니다.
+// 관련 js는 reviews.js 로  연결해 두었습니다.
+
+{#<div class="input-group mb-3">#}
+{#                    <div class="input-group-prepend">#}
+{#                        <span class="input-group-text">제목</span>#}
+{#                    </div>#}
+{#                    <input type="text" class="form-control" id="title">#}
+{#                </div>#}
+{#                <div class="input-group mb-3">#}
+{#                    <div class="input-group-prepend">#}
+{#                        <span class="input-group-text">리뷰</span>#}
+{#                    </div>#}
+{#                    <textarea class="form-control" id="soupReview"#}
+{#                              cols="30"#}
+{#                              rows="5" placeholder="140자까지 입력할 수 있습니다."></textarea>#}
+{#                </div>#}
+{#                <div class="review">#}
+{#                    <button onclick="makeReview()" type="button" class="btn btn-primary">리뷰 작성하기</button>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="reviews">#}
+{#                <table class="table">#}
+{#                    <thead>#}
+{#                    <tr>#}
+{#                        <th scope="col">제목</th>#}
+{#                        <th scope="col">리뷰</th>#}
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody id="reviews-box">#}
+{#                    </tbody>#}
+{#                </table>#}
+{#            </div>#}
