@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../static/css/style.css"/>
     <meta charset="windows-1252">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="path/to/jquery.js"></script>
+   <script src="path/to/jquery.cookie.js"></script>
 </head>
 <body>
 <div class="container">
@@ -26,7 +28,7 @@
         </h3>
     </div>
     <div class="main-list">
-        <select id="sorted" onchange="getSelectVale();" style="width: 200px">
+        <!-- <select id="sorted" onchange="getSelectVale();" style="width: 200px">
             <option value="서울">서울특별시</option>
             <option value="부산">부산광역시</option>
             <option value="대구">대구광역시</option>
@@ -44,7 +46,7 @@
             <option value="경북">경상북도</option>
             <option value="경남">경상남도</option>
             <option value="제주">제주특별자치도</option>
-        </select>
+        </select> -->
         {% for seoul in seouls %}
             {% set title = seoul['title'] %}
             {% set address = seoul['address'] %}
@@ -57,7 +59,7 @@
                         {{ title }}
                     </div>
                     <div class="soup-title-desc" id="address">{{ address }}</div>
-                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    <div class="view-more" id = "{{loop.index0}}"><span class="view-more-box" onclick="getIndex()">View more</span>
                     </div>
                 </div>
             </div>
@@ -82,7 +84,10 @@
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
-<script src="../static/js/app.js"></script>
-<script src="../static/js/sort.js"></script>
+        
+<script src="../static/JS/chageToreview.js"></script>
+<script src="../static/JS/login.js"></script>
+<script src="../static/JS/app.js"></script>
+<script src="../static/JS/sort.js"></script>
 </body>
 </html>

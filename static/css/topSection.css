@@ -1,6 +1,6 @@
 .container {
   width: 1280px;
-  height: 300vh;
+  height: 100%;
   margin: auto;
   overflow: visible;
 }
