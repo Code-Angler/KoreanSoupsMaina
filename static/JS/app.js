@@ -65,3 +65,7 @@ function loginout() {
     alert("로그인 페이지로 이동합니다.");
   }
 }
+
+function nobtn() {
+  alert("로그인 또는 회원가입을 해주세요!");
+}
