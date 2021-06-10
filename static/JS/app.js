@@ -35,7 +35,7 @@ function showSelectList() {
     selectedHide = false;
   } else {
     selectedDownMenu.style.visibility = "hidden";
-    selectedUpMenu.style.border = "1px solid #dddddd";
+    selectedUpMenu.style.border = "none";
     selectedHide = true;
   }
 }

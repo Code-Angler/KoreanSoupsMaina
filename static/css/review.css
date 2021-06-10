@@ -261,7 +261,7 @@ textarea:focus {
 .review-desc {
   font-family: "ChosunSg";
   height: 150px;
-  width: 270px;
+  width: 450px;
 
   display: flex;
   align-items: flex-start;
@@ -278,7 +278,27 @@ textarea:focus {
 }
 
 .review-written-content {
+  width: 100%;
   font-size: 20px;
-  padding: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   font-family: "ChosunSg";
+}
+
+.delete-button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  color: #bdbdbd;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-button-box {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
 }
