@@ -18,6 +18,7 @@ function changeToLogin() {
 
 function changeToMain() {
   window.location.href = "/";
+  localStorage.setItem("지역명", "seoul");
 }
 
 let selectedHide = true;
