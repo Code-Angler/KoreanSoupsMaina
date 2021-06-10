@@ -7,23 +7,18 @@ var mapContainer = document.querySelector(".review-map"), // 지도를 표시할
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
 function callLatLng() {
-  // 현재 위치의 위도와 경도로 한글로된 지명 불러오기.
-
   return $.ajax({
     method: "GET",
-    // url: `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${lon}&y=${lat}&input_coord=WGS84`,
     url: `https://dapi.kakao.com/v2/local/search/keyword.json?y=37.514322572335935&x=127.06283102249932&radius=20000`,
-    data: {query=카카오프렌즈},
+    data: "query=카카오프렌즈",
     headers: {
       Authorization: "KakaoAK 0cfd3bd6b7c548be449e9c747e2c39ba",
     },
   }).done(function (msg) {
-    return (
-      msg.documents[0].address.region_1depth_name +
-      msg.documents[0].address.region_2depth_name
-    );
+    console.log(msg);
   });
 }
+window.onload = callLatLng();
 
 // function getLatLngbyKeyword(keyword) {
 //   //키워드를 통해 위치 정보 불러오는 api
