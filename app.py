@@ -303,8 +303,7 @@ def review():
         if jeju_add == True:
             jeju.append(stores)
  
-    return render_template('review.html', msg=msg, stores = db_stores,
-                           seouls=seoul,
+    return render_template('review.html', msg=msg, stores = db_stores,             seouls=seoul,
                            busans=busan,
                            daegus=daegu,
                            incheons=incheon,
@@ -321,12 +320,147 @@ def review():
                            gyeongbuks=gyeongbuk,
                            gyeongnams=gyeongnam,
                            jejus=jeju)
-    return jsonify({''})
+
+
 
 @app.route('/reviewContents', methods=['GET'])
 def listing():
     db_stores = list(db.crawling_stores.find({}, {'_id': False}))
-    return jsonify({'stores':db_stores})
+    seoul = []
+    for stores in db_stores:
+        address = stores['address']
+        seoul_add = '서울' in address
+        if seoul_add == True:
+            seoul.append(stores)
+
+    busan = []
+    for stores in db_stores:
+        address = stores['address']
+        busan_add = '부산' in address
+        if busan_add == True:
+            busan.append(stores)
+
+    daegu = []
+    for stores in db_stores:
+        address = stores['address']
+        daegu_add = '대구' in address
+        if daegu_add == True:
+            daegu.append(stores)
+
+    incheon = []
+    for stores in db_stores:
+        address = stores['address']
+        incheon_add = '인천' in address
+        if incheon_add == True:
+            incheon.append(stores)
+
+    gwangju = []
+    for stores in db_stores:
+        address = stores['address']
+        gwangju_add = '광주' in address
+        if gwangju_add == True:
+            gwangju.append(stores)
+
+    daejeon = []
+    for stores in db_stores:
+        address = stores['address']
+        daejeon_add = '대전' in address
+        if daejeon_add == True:
+            daejeon.append(stores)
+
+    ulsan = []
+    for stores in db_stores:
+        address = stores['address']
+        ulsan_add = '울산' in address
+        if ulsan_add == True:
+            ulsan.append(stores)
+
+    sejong = []
+    for stores in db_stores:
+        address = stores['address']
+        sejong_add = '세종' in address
+        if sejong_add == True:
+            sejong.append(stores)
+
+    gyeonggi = []
+    for stores in db_stores:
+        address = stores['address']
+        gyeonggi_add = '경기' in address
+        if gyeonggi_add == True:
+            gyeonggi.append(stores)
+
+    gangwon = []
+    for stores in db_stores:
+        address = stores['address']
+        gangwon_add = '강원' in address
+        if gangwon_add == True:
+            gangwon.append(stores)
+
+    chungbuk = []
+    for stores in db_stores:
+        address = stores['address']
+        chungbuk_add = '충북' in address
+        if chungbuk_add == True:
+            chungbuk.append(stores)
+
+    chungnam = []
+    for stores in db_stores:
+        address = stores['address']
+        chungnam_add = '충남' in address
+        if chungnam_add == True:
+            chungnam.append(stores)
+
+    jeonbuk = []
+    for stores in db_stores:
+        address = stores['address']
+        jeonbuk_add = '전북' in address
+        if jeonbuk_add == True:
+            jeonbuk.append(stores)
+
+    jeonnam = []
+    for stores in db_stores:
+        address = stores['address']
+        jeonnam_add = '전남' in address
+        if jeonnam_add == True:
+            jeonnam.append(stores)
+
+    gyeongbuk = []
+    for stores in db_stores:
+        address = stores['address']
+        gyeongbuk_add = '경북' in address
+        if gyeongbuk_add == True:
+            gyeongbuk.append(stores)
+
+    gyeongnam = []
+    for stores in db_stores:
+        address = stores['address']
+        gyeongnam_add = '경남' in address
+        if gyeongnam_add == True:
+            gyeongnam.append(stores)
+
+    jeju = []
+    for stores in db_stores:
+        address = stores['address']
+        jeju_add = '제주' in address
+        if jeju_add == True:
+            jeju.append(stores)
+    return jsonify({'stores':db_stores, 'seoul': seoul,
+                           'busan':busan,
+                           'daegu':daegu,
+                           'incheon':incheon,
+                           'gwangju':gwangju,
+                           'daejeon':daejeon,
+                           'ulsan':ulsan,
+                           'sejong':sejong,
+                           'gyeonggi':gyeonggi,
+                           'gangwon':gangwon,
+                           'chungbuk':chungbuk,
+                           'chungnam':chungnam,
+                           'jeonbuk':jeonbuk,
+                           'jeonnam':jeonnam,
+                           'gyeongbuk':gyeongbuk,
+                           'gyeongnam':gyeongnam,
+                           'jeju':jeju})
 
 
 
