@@ -6,7 +6,19 @@ var mapContainer = document.querySelector(".review-map"), // 지도를 표시할
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
-
+function callLatLng() {
+  return $.ajax({
+    method: "GET",
+    url: `https://dapi.kakao.com/v2/local/search/keyword.json?y=37.514322572335935&x=127.06283102249932&radius=20000`,
+    data: "query=카카오프렌즈",
+    headers: {
+      Authorization: "KakaoAK 0cfd3bd6b7c548be449e9c747e2c39ba",
+    },
+  }).done(function (msg) {
+    console.log(msg);
+  });
+}
+window.onload = callLatLng();
 
 // function getLatLngbyKeyword(keyword) {
 //   //키워드를 통해 위치 정보 불러오는 api
