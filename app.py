@@ -14,8 +14,8 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 SECRET_KEY = 'SPARTA'
 
 
-# client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
+# client = MongoClient('localhost', 27017)
 db = client.koransoups
 
 @app.route('/')
