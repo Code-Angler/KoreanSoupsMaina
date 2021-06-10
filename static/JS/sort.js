@@ -8,4 +8,5 @@ $(".categoryList").click(function () {
   createMainPage();
 });
 
+
 localStorage.setItem("지역명", 'seoul');

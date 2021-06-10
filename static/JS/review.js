@@ -55,4 +55,4 @@ function showReview() {
 //     });
 // }
 
-window.onload = showReview()();
+window.onload = showReview();
