@@ -158,7 +158,7 @@
   width: 100%;
   border: 1px solid #bdbdbd7a;
   border-radius: 10px 10px 0px 0px;
-  font-size: 30px;
+  font-size: 21px;
   /* height: 20px; */
 }
 
@@ -170,7 +170,7 @@ input:focus {
   width: 100%;
   border: 1px solid #bdbdbd7a;
   border-top: none;
-  font-size: 30px;
+  font-size: 21px;
 }
 
 textarea:focus {
