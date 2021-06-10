@@ -59,7 +59,7 @@
                         {{ title }}
                     </div>
                     <div class="soup-title-desc" id="address">{{ address }}</div>
-                    <div class="view-more" id = "{{loop.index0}}"><span class="view-more-box" onclick="getIndex()">View more</span>
+                    <div class="view-more"><span class="view-more-box" onclick= "getIndex({{loop.index0}}); changeToReview()">View more</span>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
-        
+
 <script src="../static/JS/chageToreview.js"></script>
 <script src="../static/JS/login.js"></script>
 <script src="../static/JS/app.js"></script>

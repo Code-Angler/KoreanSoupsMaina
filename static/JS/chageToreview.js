@@ -1,4 +1,4 @@
-let menuIndex = 0;
+let mian = 0;
 
 function sol() {
   $.ajax({
@@ -7,33 +7,24 @@ function sol() {
     data: {},
     success: function (response) {
       // let articles = response["all_articles"];
-      console.log(response["stores"][0]);
+      const indexinLocal = localStorage.getItem("index");
+      console.log(indexinLocal);
+      console.log(response["stores"][indexinLocal]);
     },
   });
 }
 
-function changeToReview(index) {
-  window.location.href = "/review";
-  menuIndex = index;
-  console.log(index);
+// document.querySelector(".view-more").addEventListener('click',()=>{
+
+// }
+// )
+function getIndex(index) {
+  mian = index;
+  localStorage.setItem("index", index);
 }
 
-function changeReviewContents(index) {
-  const reviewAddress = document.querySelector(".address-review");
-  const reviewPhone = document.querySelector(".phone-review");
-  const reviewTitle = document.querySelector(".title-review");
-  const reviewRuntime = document.querySelector(".runtime-review");
-  const reviewLink = document.querySelector(".link-review");
-
-  console.log(reviewAddress.textContent);
-
-  reviewAddress.textContent = `{{stores[${index}].address}}`;
-  // reviewPhone.textContent = `{{stores[${index}].phone}}`;
-  // reviewLink.textContent = `{{stores[${index}].link_url}}`;
-  // reviewRuntime.textContent = `{{stores[${index}].runTime}}`;
-  // reviewTitle.textContent = `{{stores[${index}].title}}`;
-  console.log(reviewAddress.textContent);
-  console.log("지금 이것도 작동중이야");
+function changeToReview() {
+  window.location.href = "/review";
 }
 
 function checkRevieOrLogin() {
@@ -42,18 +33,6 @@ function checkRevieOrLogin() {
   if (pageName == "Review") changeReviewContents(menuIndex);
 }
 window.onload = checkRevieOrLogin();
-
-// document.querySelector(".view-more")?.addEventListener("click", () => {
-//   menuIndex = document.querySelector(".view-more").getAttribute("id");
-//   console.log(menuIndex);
-//   // window.location.href = "/review";
-//   console.log("눌렸다!");
-// });
-
-function getIndex() {
-  let index = document.querySelectorAll(".view-more").getAttribute("id");
-  console.log(index);
-}
 
 // function getIndexAndKey() {
 //   let index = $("view-more").attr("id");
@@ -70,3 +49,10 @@ function getIndex() {
 //     },
 //   });
 // }
+
+// document.querySelector(".view-more")?.addEventListener("click", () => {
+//   menuIndex = document.querySelector(".view-more").getAttribute("id");
+//   console.log(menuIndex);
+//   // window.location.href = "/review";
+//   console.log("눌렸다!");
+// });
