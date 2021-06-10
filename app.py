@@ -13,8 +13,8 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 할 수 있습니다.
 SECRET_KEY = 'JINGUK'
 
-# client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
+# client = MongoClient('localhost', 27017)
 db = client.koransoups
 
 @app.route('/')

@@ -33,10 +33,10 @@ function showReview() {
         let temp_html = `<div class="written-review-box">
                 <div class="review-logo"><img src="../static/image/reviewlogo.png" alt=""></div>
                 <div class="review-desc">
-                    <div class="review-written-title">Title: ${title}</div>
+                    <div class="review-written-title">${title}</div>
                 </div>
                 <div class="review-written-content">${review}</div>
-                <td><button onclick="deleteReview( '${title}', '${review}')">X</button></td>
+                <div class="delete-button-box"><button class="delete-button" onclick="deleteReview( '${title}', '${review}')">X</button></div>
             </div>`;
         $("#reviews-box").append(temp_html);
       }

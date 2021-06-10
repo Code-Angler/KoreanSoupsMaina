@@ -1,125 +1,117 @@
-
 <!doctype html>
 <html lang="en">
-    <head>
+<head>
 
-        <!-- Webpage Title -->
-        <title>진국</title>
+    <!-- Webpage Title -->
+    <title>진국</title>
 
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bulma CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-        <!-- Font Awesome CSS -->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Brush+Script&family=Nanum+Myeongjo&display=swap"
-              rel="stylesheet">
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Brush+Script&family=Nanum+Myeongjo&display=swap"
+          rel="stylesheet">
 
-        <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0050f57ace903dff02057bc8548ea3f"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0050f57ace903dff02057bc8548ea3f"></script>
 
-        <link href="../static/image/logo.png" rel="shortcut icon" type="image/x-icon">
-<link rel="stylesheet" href="../static/css/style.css">
-<link rel="stylesheet" href="../static/css/review.css">
-    </head>
+    <link href="../static/image/logo.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/review.css">
+</head>
 
-    <body>
+<body>
 
-        <div class="container">
-            <div class="top-section">
-            <div class="top-section-box">
-              <div class="logo"><img src="../static/image/logo.png" class="logo-img"></div>
-              <div class="nav-desc">국밥에 진심인 어려분을 환영합니다</div>
-              <div class="login" onclick="changeToLogin()"><img src="../static/image/login.svg" class="login-icon" /></div>
-            </div>
+<div class="container">
+    <div class="top-section">
+        <div class="top-section-box">
+            <div class="logo"><img src="../static/image/logo.png" class="logo-img"></div>
+            <div class="nav-desc">국밥에 진심인 어려분을 환영합니다</div>
+            <div class="login" onclick="changeToLogin()"><img src="../static/image/login.svg" class="login-icon"/></div>
         </div>
-        <div class="empty-box-review">
-            <div class="review-name-box page-name">Review</div>
-        </div>
-
-        <div class="review-box">
-            <div class="review-map"> 
-                <div class="review-img-title title-review"></div>
-                <div class="img-cover"></div>
-            </div>
-            <div class="review-down-box">
-                <div class="review-detail-box">
-                    <div class="detail-title">Contact here</div>
-                    <div class="detail-real">
-                        <div class="detail-address">
-                            <img src="../static/image/place.svg">
-                            <div class="detail-content-title">Address</div>
-                            <div class="detail-content address-review">{{stores[0].address}}</div>
-                        </div>
-                        <div class="detail-phone">
-                            <img src="../static/image/phone.svg">
-                            <div class="detail-content-title">Phone-number</div>
-                            <div class="detail-content phone-review">{{stores[0].phone}}</div>
-                        </div>
-                        <div class="detail-email">
-                            <img src="../static/image/email.svg" >
-                            <div class="detail-content-title">Link</div>
-                            <div class="detail-content link-review">{{stores[0].link_url}}</div>
-                        </div>
-                        <div class="detail-runtime">
-                            <img src="../static/image/runtime.svg" >
-                            <div class="detail-content-title">Run-time</div>
-                            <div class="detail-content runtime-review">{{stores[0].runTime}}</div>
-                        </div>
-                
-                    </div>
-                </div>
-                <div class="review-write-box">
-                    <div class="review-title-box">Write Review</div>
-                    <div class="review-real-box">
-                            <input type="text" class="review-title-input" id="title">
-                            <textarea class="review-form-textarea" id="soupReview"></textarea>
-                        <div class="review-submit" onclick="makeReview()"><i class="far fa-edit">&nbsp;&nbsp;</i>리뷰 작성하기</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div id="reviews-box">
-                <div class="written-review-box">
-                    <div class="review-logo"><img src="../static/image/reviewlogo.png" alt=""></div>
-                    <div class="review-desc">
-                        <div class="review-written-title">Title: 맛있었다</div>
-                    </div>
-                    <div class="review-written-content">너무너무 맛있는 돼지국밥, 다음에는 순대국밥도 먹어봐야지!</div>
-                    <div class="delete-button-box"><button class="delete-button" onclick="deleteReview( '${title}', '${review}')">X</button></div>
-                </div>
-            </div>
+    </div>
+    <div class="empty-box-review">
+        <div class="review-name-box page-name">Review</div>
     </div>
 
+    <div class="review-box">
+        <div class="review-map">
+            <div class="review-img-title title-review"></div>
+            <div class="img-cover"></div>
+        </div>
+        <div class="review-down-box">
+            <div class="review-detail-box">
+                <div class="detail-title">Contact here</div>
+                <div class="detail-real">
+                    <div class="detail-address">
+                        <img src="../static/image/place.svg">
+                        <div class="detail-content-title">Address</div>
+                        <div class="detail-content address-review">{{ stores[0].address }}</div>
+                    </div>
+                    <div class="detail-phone">
+                        <img src="../static/image/phone.svg">
+                        <div class="detail-content-title">Phone-number</div>
+                        <div class="detail-content phone-review">{{ stores[0].phone }}</div>
+                    </div>
+                    <div class="detail-email">
+                        <img src="../static/image/email.svg">
+                        <div class="detail-content-title">Link</div>
+                        <div class="detail-content link-review">{{ stores[0].link_url }}</div>
+                    </div>
+                    <div class="detail-runtime">
+                        <img src="../static/image/runtime.svg">
+                        <div class="detail-content-title">Run-time</div>
+                        <div class="detail-content runtime-review">{{ stores[0].runTime }}</div>
+                    </div>
 
-          <div class="footers">
-            <div class="footer-logo"><img src="../static/image/logoblack.png" class="logo-img"></div>
-            <div class="footer-menu">
-                <div class="footer-menus">Main</div>
-                <div class="footer-menus">Login</div>
-                <div class="footer-menus">Detail</div>
-                <div class="footer-menus">Contact</div>
+                </div>
             </div>
-            <div class="footer-copyright">Copyright © 2021 Hanghae Team 5</div>
+            <div class="review-write-box">
+                <div class="review-title-box">Write Review</div>
+                <div class="review-real-box">
+                    <input type="text" class="review-title-input" id="title">
+                    <textarea class="review-form-textarea" id="soupReview"></textarea>
+                    <div class="review-submit" onclick="makeReview()"><i class="far fa-edit">&nbsp;&nbsp;</i>리뷰 작성하기
+                    </div>
+                </div>
+            </div>
         </div>
-          <div class="banner-box-review" onclick="changeToMain()"></div>
-        </div>
+    </div>
+    <div id="reviews-box">
+    </div>
+</div>
+<div class="footers">
+    <div class="footer-logo"><img src="../static/image/logoblack.png" class="logo-img"></div>
+    <div class="footer-menu">
+        <div class="footer-menus">Main</div>
+        <div class="footer-menus">Login</div>
+        <div class="footer-menus">Detail</div>
+        <div class="footer-menus">Contact</div>
+    </div>
+    <div class="footer-copyright">Copyright © 2021 Hanghae Team 5</div>
+</div>
+<div class="banner-box-review" onclick="changeToMain()"></div>
+</div>
 
 
-        <script src="../static/JS/chageToreview.js"></script>
-        <script src="../static/JS/kakaoMap.js"></script>
-       <script src="../static/JS/app.js"></script>
-        <script src="../static/JS/login.js"></script>
-    <script src="../static/JS/review.js"></script>
+<script src="../static/JS/chageToreview.js"></script>
+<script src="../static/JS/kakaoMap.js"></script>
+<script src="../static/JS/app.js"></script>
+<script src="../static/JS/login.js"></script>
+<script src="../static/JS/review.js"></script>
 
-    </body>
+</body>
 </html>
 
 
