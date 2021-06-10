@@ -1,7 +1,0 @@
-# Environments
-.env
-.idea
-.venv
-env/
-venv/
-idea/
