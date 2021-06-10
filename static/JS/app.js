@@ -19,3 +19,22 @@ function changeToLogin() {
 function changeToMain() {
   window.location.href = "/";
 }
+
+let selectedHide = true;
+
+function showSelectList() {
+  let selectedDownMenu = document.querySelector(
+    ".count-selected-menu-downlist"
+  );
+  let selectedUpMenu = document.querySelector(".count-selected-menu");
+
+  if (selectedHide == true) {
+    selectedDownMenu.style.visibility = "visible";
+    selectedUpMenu.style.border = "1px solid #346aff";
+    selectedHide = false;
+  } else {
+    selectedDownMenu.style.visibility = "hidden";
+    selectedUpMenu.style.border = "1px solid #dddddd";
+    selectedHide = true;
+  }
+}

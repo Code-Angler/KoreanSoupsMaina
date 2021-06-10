@@ -3,6 +3,7 @@
   height: 100%;
   margin: auto;
   overflow: visible;
+  position: relative;
 }
 
 .top-section {
