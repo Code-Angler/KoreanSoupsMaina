@@ -14,10 +14,9 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 할 수 있습니다.
 SECRET_KEY = 'JINGUK'
 
-client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
-# client = MongoClient('localhost', 27017)
+# client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
+client = MongoClient('localhost', 27017)
 db = client.koransoups
-
 
 @app.route('/')
 def home():
@@ -165,7 +164,6 @@ def login():
     msg = request.args.get("msg")
     return render_template('login.html', msg=msg)
 
-
 @app.route('/review')
 def review():
     msg = request.args.get("msg")
@@ -290,7 +288,7 @@ def review():
                            gyeongbuks=gyeongbuk,
                            gyeongnams=gyeongnam,
                            jejus=jeju)
-
+    return jsonify({''})
 
 @app.route('/reviewContents', methods=['GET'])
 def listing():
@@ -397,7 +395,8 @@ def listing():
         jeju_add = '제주' in address
         if jeju_add == True:
             jeju.append(stores)
-    return jsonify({'stores': db_stores, 'seoul': seoul,
+    return jsonify({'stores': db_stores,
+                    'seoul': seoul,
                     'busan': busan,
                     'daegu': daegu,
                     'incheon': incheon,
@@ -423,10 +422,13 @@ def user(username):
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         status = (username == payload["id"])  # 내 프로필이면 True, 다른 사람 프로필 페이지면 False
+
         user_info = db.users.find_one({"username": username}, {"_id": False})
         return render_template('user.html', user_info=user_info, status=status)
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("home"))
+
+
 
 
 @app.route('/sign_in', methods=['POST'])
@@ -434,14 +436,17 @@ def sign_in():
     # 로그인
     username_receive = request.form['username_give']
     password_receive = request.form['password_give']
+
     pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
     result = db.users.find_one({'username': username_receive, 'password': pw_hash})
+
     if result is not None:
         payload = {
             'id': username_receive,
             'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+
         return jsonify({'result': 'success', 'token': token})
     # 찾지 못하면
     else:
@@ -457,9 +462,6 @@ def sign_up():
         "username": username_receive,  # 아이디
         "password": password_hash,  # 비밀번호
         "profile_name": username_receive,  # 프로필 이름 기본값은 아이디
-        "profile_pic": "",  # 프로필 사진 파일 이름
-        "profile_pic_real": "profile_pics/profile_placeholder.png",  # 프로필 사진 기본 이미지
-        "profile_info": ""  # 프로필 한 마디
     }
     db.users.insert_one(doc)
     return jsonify({'result': 'success'})
@@ -472,26 +474,16 @@ def check_dup():
     return jsonify({'result': 'success', 'exists': exists})
 
 
-@app.route('/update_profile', methods=['POST'])
-def save_img():
-    token_receive = request.cookies.get('mytoken')
-    try:
-        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        # 프로필 업데이트
-        return jsonify({"result": "success", 'msg': '프로필을 업데이트했습니다.'})
-    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
-        return redirect(url_for("home"))
-
 
 ## API 역할을 하는 부분
-@app.route('/review', methods=['POST'])
+@app.route('/reviews', methods=['POST'])
 def write_review():
-    # title_receive로 클라이언트가 준 title 가져오기
+    #title_receive로 클라이언트가 준 title 가져오기
     title_receive = request.form['title_give']
-    # review_receive로 클라이언트가 준 review 가져오기
+    #review_receive로 클라이언트가 준 review 가져오기
     review_receive = request.form['review_give']
 
-    # DB에 삽입할 review 만들기
+    #DB에 삽입할 review 만들기
     doc = {
         'title': title_receive,
         'review': review_receive,
@@ -499,12 +491,11 @@ def write_review():
 
     db.miniProject.insert_one(doc)
 
-    # 성공 여부 & 성공 메시지 반환
+    #성공 여부 & 성공 메시지 반환
     return jsonify({'msg': '저장완료!'})
 
-    # 삭제 기능
 
-
+    #삭제 기능
 @app.route('/deleteReview', methods=['POST'])
 def delete_review():
     title_receive = request.form['title_give']
@@ -513,8 +504,9 @@ def delete_review():
     return jsonify({'msg': '삭제 완료!'})
 
 
+
 ##  GET
-@app.route('/review', methods=['GET'])
+@app.route('/reviews', methods=['GET'])
 def read_reviews():
     reviews = list(db.miniProject.find({}, {'_id': False}))
     return jsonify({'all_reviews': reviews})

@@ -40,7 +40,10 @@ function checkRevieOrLogin() {
   document.querySelector(".login-icon").src = localStorage.getItem("src");
   const pageName = document.querySelector(".page-name")?.textContent;
   console.log(pageName);
-  if (pageName == "Review") changeReview();
+  if (pageName == "Review") {
+    callLatLng();
+    changeReview();
+  }
 }
 
 window.onload = checkRevieOrLogin();

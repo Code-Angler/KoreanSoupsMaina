@@ -7,3 +7,5 @@ $(".categoryList").click(function () {
   //   categoryTitle.textContent = document.querySelector(`#${listID}`).textContent;
   createMainPage();
 });
+
+localStorage.setItem("지역명", 'seoul');

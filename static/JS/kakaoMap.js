@@ -18,7 +18,6 @@ function callLatLng() {
     console.log(msg);
   });
 }
-window.onload = callLatLng();
 
 // function getLatLngbyKeyword(keyword) {
 //   //키워드를 통해 위치 정보 불러오는 api

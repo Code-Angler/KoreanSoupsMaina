@@ -4,7 +4,6 @@
 function sign_in() {
   let username = $("#input-username").val();
   let password = $("#input-password").val();
-
   if (username == "") {
     $("#help-id-login").text("아이디를 입력해주세요.");
     $("#input-username").focus();
@@ -12,7 +11,6 @@ function sign_in() {
   } else {
     $("#help-id-login").text("");
   }
-
   if (password == "") {
     $("#help-password-login").text("비밀번호를 입력해주세요.");
     $("#input-password").focus();
@@ -31,15 +29,12 @@ function sign_in() {
       if (response["result"] == "success") {
         $.cookie("mytoken", response["token"], { path: "/" });
         window.location.replace("/");
-        localStorage.setItem("src", "../static/image/logincheck.svg");
       } else {
         alert(response["msg"]);
-        localStorage.setItem("src", "../static/image/login.svg");
       }
     },
   });
 }
-
 function toggle_sign_up() {
   $("#sign-up-box").toggleClass("is-hidden");
   $("#div-sign-in-or-up").toggleClass("is-hidden");
@@ -48,13 +43,11 @@ function toggle_sign_up() {
   $("#help-password").toggleClass("is-hidden");
   $("#help-password2").toggleClass("is-hidden");
 }
-
 function sign_up() {
   let username = $("#input-username").val();
   let password = $("#input-password").val();
   let password2 = $("#input-password2").val();
   console.log(username, password, password2);
-
   if ($("#help-id").hasClass("is-danger")) {
     alert("아이디를 다시 확인해주세요.");
     return;
@@ -62,7 +55,6 @@ function sign_up() {
     alert("아이디 중복확인을 해주세요.");
     return;
   }
-
   if (password == "") {
     $("#help-password")
       .text("비밀번호를 입력해주세요.")
@@ -118,17 +110,14 @@ function sign_up() {
     },
   });
 }
-
 function is_nickname(asValue) {
   var regExp = /^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{2,10}$/;
   return regExp.test(asValue);
 }
-
 function is_password(asValue) {
   var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*]{8,20}$/;
   return regExp.test(asValue);
 }
-
 function check_dup() {
   let username = $("#input-username").val();
   console.log(username);
@@ -172,11 +161,6 @@ function check_dup() {
     },
   });
 }
-
-document.querySelector(".login-icon").src = "../static/image/logincheck.svg";
-
 $.cookie("visits");
-
 // let checkCookie = $.cookie("mytoken");
-
 // console.log(checkCookie);
