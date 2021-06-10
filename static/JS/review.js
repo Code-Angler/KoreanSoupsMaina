@@ -34,9 +34,9 @@ function showReview() {
                 <div class="review-logo"><img src="../static/image/reviewlogo.png" alt=""></div>
                 <div class="review-desc">
                     <div class="review-written-title">Title: ${title}</div>
-                    <div class="review-writer">ID: 레오장</div>
                 </div>
                 <div class="review-written-content">${review}</div>
+                <td><button onclick="deleteReview( '${title}', '${review}')">X</button></td>
             </div>`;
         $("#reviews-box").append(temp_html);
       }
@@ -44,17 +44,17 @@ function showReview() {
   });
 }
 
-// function deleteReview(title, review) {
-//     $.ajax({
-//         type: 'POST',
-//         url: '/deleteReview',
-//         data: {title_give: title, review_give: review},
-//         success: function (response) {
-//             alert(response['msg']);
-//             window.location.reload()
-//             console.log()
-//         }
-//     });
-// }
+function deleteReview(title, review) {
+    $.ajax({
+        type: 'POST',
+        url: '/deleteReview',
+        data: {title_give: title, review_give: review},
+        success: function (response) {
+            alert(response['msg']);
+            window.location.reload()
+            console.log()
+        }
+    });
+}
 
 window.onload = showReview();

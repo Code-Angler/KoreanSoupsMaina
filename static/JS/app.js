@@ -39,3 +39,27 @@ function showSelectList() {
     selectedHide = true;
   }
 }
+
+function getCookie(cname) {
+     var name = cname + "=";
+     var ca = document.cookie.split(';');
+     for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if(c.indexOf(name) == 0)
+           return c.substring(name.length,c.length);
+     }
+     return "";
+}
+function loginout() {
+    var yum = getCookie("mytoken");
+    if(yum){
+        const logbt = document.querySelector('.login');
+    logbt.addEventListener('click', () => {
+      document.cookie = 'mytoken=; expires=Mon, 01 Jan 1970 00:00:00 UTC;'
+      alert('로그아웃 완료하였습니다!')
+      window.location.href = '/';
+    }) } else {
+    window.location.href = '/login';
+    alert('로그인 페이지로 이동합니다.')}
+    }
