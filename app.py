@@ -444,23 +444,23 @@ def listing():
         jeju_add = '제주' in address
         if jeju_add == True:
             jeju.append(stores)
-    return jsonify({'stores':db_stores, 'seouls': seoul,
-                           'busans':busan,
-                           'daegus':daegu,
-                           'incheons':incheon,
-                           'gwangjus':gwangju,
-                           'daejeons':daejeon,
-                           'ulsans':ulsan,
-                           'sejongs':sejong,
-                           'gyeonggis':gyeonggi,
-                           'gangwons':gangwon,
-                           'chungbuks':chungbuk,
-                           'chungnams':chungnam,
-                           'jeonbuks':jeonbuk,
-                           'jeonnams':jeonnam,
-                           'gyeongbuks':gyeongbuk,
-                           'gyeongnams':gyeongnam,
-                           'jejus':jeju})
+    return jsonify({'stores':db_stores, 'seoul': seoul,
+                           'busan':busan,
+                           'daegu':daegu,
+                           'incheon':incheon,
+                           'gwangju':gwangju,
+                           'daejeon':daejeon,
+                           'ulsan':ulsan,
+                           'sejong':sejong,
+                           'gyeonggi':gyeonggi,
+                           'gangwon':gangwon,
+                           'chungbuk':chungbuk,
+                           'chungnam':chungnam,
+                           'jeonbuk':jeonbuk,
+                           'jeonnam':jeonnam,
+                           'gyeongbuk':gyeongbuk,
+                           'gyeongnam':gyeongnam,
+                           'jeju':jeju})
 
 
 

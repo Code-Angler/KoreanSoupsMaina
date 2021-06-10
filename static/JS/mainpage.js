@@ -4,11 +4,12 @@ function createMainPage() {
     url: "/reviewContents",
     data: {},
     success: function (response) {
-      // let articles = response["all_articles"];
-      // const indexinLocal = localStorage.getItem("index");
-      //   console.log(indexinLocal);
-      console.log(response["seouls"]);
-      const store = response["seouls"];
+      //   let articles = response["all_articles"];
+      //   const indexinLocal = localStorage.getItem("index");
+      //     console.log(indexinLocal);
+      let place = localStorage.getItem("지역명");
+      console.log(place);
+      const store = response[place];
       $(".main-list").empty();
       for (let i = 0; i < store.length; i++) {
         let address = store[i]["address"];
@@ -24,7 +25,7 @@ function createMainPage() {
                   ${title}
               </div>
               <div class="soup-title-desc" id="address">${address}</div>
-              <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+              <div class="view-more" onclick="changeToReview(${i})"><span class="view-more-box">View more</span>
               </div>
           </div>
       </div>`;

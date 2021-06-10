@@ -1,58 +1,44 @@
 let mian = 0;
 
-function sol() {
+function changeReview() {
   $.ajax({
     type: "GET",
     url: "/reviewContents",
     data: {},
     success: function (response) {
-      // let articles = response["all_articles"];
       const indexinLocal = localStorage.getItem("index");
       console.log(indexinLocal);
-      console.log(response["stores"][indexinLocal]);
+      let place = localStorage.getItem("지역명");
+      const store = response[place];
+
+      // $(".review-detail-box").empty();
+
+      let address = store[indexinLocal]["address"];
+      let title = store[indexinLocal]["title"];
+      let runTime = store[indexinLocal]["runTime"];
+      let phone = store[indexinLocal]["phone"];
+      let link_url = store[indexinLocal]["link_url"];
+      let img_url = store[indexinLocal]["img_url"];
+      backgroundImage = document.querySelector(
+        ".review-image-box"
+      ).style.backgroundImage = `url("${img_url}")`;
+      document.querySelector(".title-review").textContent = title;
+      document.querySelector(".address-review").textContent = address;
+      document.querySelector(".phone-review").textContent = phone;
+      document.querySelector(".link-review").textContent = link_url;
+      document.querySelector(".runtime-review").textContent = runTime;
     },
   });
 }
 
-// document.querySelector(".view-more").addEventListener('click',()=>{
-
-// }
-// )
-function getIndex(index) {
-  mian = index;
-  localStorage.setItem("index", index);
-}
-
-function changeToReview() {
+function changeToReview(index) {
   window.location.href = "/review";
+  localStorage.setItem("index", index);
 }
 
 function checkRevieOrLogin() {
   const pageName = document.querySelector(".page-name")?.textContent;
   console.log(pageName);
-  if (pageName == "Review") changeReviewContents(menuIndex);
+  if (pageName == "Review") changeReview();
 }
 window.onload = checkRevieOrLogin();
-
-// function getIndexAndKey() {
-//   let index = $("view-more").attr("id");
-//   let key = $("#post-comment").val();
-
-//   $.ajax({
-//     type: "POST",
-//     url: "/memo",
-//     data: { url_give: url, comment_give: comment },
-//     success: function (response) {
-//       // 성공하면
-//       alert(response["msg"]);
-//       window.location.reload();
-//     },
-//   });
-// }
-
-// document.querySelector(".view-more")?.addEventListener("click", () => {
-//   menuIndex = document.querySelector(".view-more").getAttribute("id");
-//   console.log(menuIndex);
-//   // window.location.href = "/review";
-//   console.log("눌렸다!");
-// });
