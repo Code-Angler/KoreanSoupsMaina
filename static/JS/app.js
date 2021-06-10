@@ -19,7 +19,3 @@ function changeToLogin() {
 function changeToMain() {
   window.location.href = "/";
 }
-
-function changeToReview() {
-  window.location.href = "/review";
-}

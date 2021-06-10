@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../static/css/style.css"/>
     <meta charset="windows-1252">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="path/to/jquery.js"></script>
+   <script src="path/to/jquery.cookie.js"></script>
 </head>
 <body>
 <div class="container">
@@ -25,7 +27,12 @@
             <p class="title-desc">'진국'은 국밥맛집검색 전문 사이트입니다.</p>
         </h3>
     </div>
+<<<<<<< HEAD
+    <div class="main-list">
+        <!-- <select id="sorted" onchange="getSelectVale();" style="width: 200px">
+=======
     <select id="sorted" onchange="getSelectVale();" style="width: 200px;margin-left: 1100px;display: block">
+>>>>>>> 570db6c797c5027e8b91130252cbb91c55766f9d
             <option value="서울">서울특별시</option>
             <option value="부산">부산광역시</option>
             <option value="대구">대구광역시</option>
@@ -43,6 +50,13 @@
             <option value="경북">경상북도</option>
             <option value="경남">경상남도</option>
             <option value="제주">제주특별자치도</option>
+<<<<<<< HEAD
+        </select> -->
+        {% for seoul in seouls %}
+            {% set title = seoul['title'] %}
+            {% set address = seoul['address'] %}
+            {% set img_url = seoul['img_url'] %}
+=======
         </select>
     <div class="main-list">
         <section class="section-seoul">
@@ -240,6 +254,7 @@
             {% set title = area['title'] %}
             {% set address = area['address'] %}
             {% set img_url = area['img_url'] %}
+>>>>>>> 570db6c797c5027e8b91130252cbb91c55766f9d
             <div class="list">
                 <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
                 <div class="soup-desc-box">
@@ -248,7 +263,7 @@
                         {{ title }}
                     </div>
                     <div class="soup-title-desc" id="address">{{ address }}</div>
-                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    <div class="view-more"><span class="view-more-box" onclick= "getIndex({{loop.index0}}); changeToReview()">View more</span>
                     </div>
                 </div>
             </div>
@@ -388,8 +403,11 @@
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
-<script src="../static/js/app.js"></script>
-<script src="../static/js/sort.js"></script>
+
+<script src="../static/JS/chageToreview.js"></script>
+<script src="../static/JS/login.js"></script>
+<script src="../static/JS/app.js"></script>
+<script src="../static/JS/sort.js"></script>
 </body>
 </html>
 

@@ -170,3 +170,9 @@ function check_dup() {
     },
   });
 }
+
+$.cookie("visits");
+
+// let checkCookie = $.cookie("mytoken");
+
+// console.log(checkCookie);
