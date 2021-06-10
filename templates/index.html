@@ -45,10 +45,11 @@
             <option value="경남">경상남도</option>
             <option value="제주">제주특별자치도</option>
         </select>
-        {% for seoul in seouls %}
-            {% set title = seoul['title'] %}
-            {% set address = seoul['address'] %}
-            {% set img_url = seoul['img_url'] %}
+        <section class="section-seoul">
+            {% for area in seoul %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
             <div class="list">
                 <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
                 <div class="soup-desc-box">
@@ -62,6 +63,311 @@
                 </div>
             </div>
         {% endfor %}
+        </section>
+        <section class="section-busan">
+            {% for area in busan %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-daegu">
+            {% for area in daegu %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-incheon">
+            {% for area in incheon %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-gwangju">
+            {% for area in gwangju %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-daejeon">
+            {% for area in daejeon %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-ulsan">
+            {% for area in ulsan %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-sejong">
+            {% for area in sejong %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-gyeonggi">
+            {% for area in gyeonggi %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-gangwon">
+            {% for area in gangwon %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-chungbuk">
+            {% for area in chungbuk %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-chungnam">
+            {% for area in chungnam %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-jeonbuk">
+            {% for area in jeonbuk %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-jeonnam">
+            {% for area in jeonnam %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-gyeongbuk">
+            {% for area in gyeongbuk %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-gyeongnam">
+            {% for area in gyeongnam %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+        <section class="section-jeju">
+            {% for area in jeju %}
+            {% set title = area['title'] %}
+            {% set address = area['address'] %}
+            {% set img_url = area['img_url'] %}
+            <div class="list">
+                <div class="soup-img-box"><img src="{{ img_url }}" class="soup-img"></div>
+                <div class="soup-desc-box">
+                    <div class="soup-title">
+                        <div class="title-stick"></div>
+                        {{ title }}
+                    </div>
+                    <div class="soup-title-desc" id="address">{{ address }}</div>
+                    <div class="view-more" onclick="changeToReview()"><span class="view-more-box">View more</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
     </div>
 </div>
 <div class="footers">
@@ -86,3 +392,11 @@
 <script src="../static/js/sort.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+

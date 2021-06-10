@@ -143,23 +143,23 @@ def home():
             jeju.append(stores)
 
     return render_template('index.html',
-                           seouls=seoul,
-                           busans=busan,
-                           daegus=daegu,
-                           incheons=incheon,
-                           gwangjus=gwangju,
-                           daejeons=daejeon,
-                           ulsans=ulsan,
-                           sejongs=sejong,
-                           gyeonggis=gyeonggi,
-                           gangwons=gangwon,
-                           chungbuks=chungbuk,
-                           chungnams=chungnam,
-                           jeonbuks=jeonbuk,
-                           jeonnams=jeonnam,
-                           gyeongbuks=gyeongbuk,
-                           gyeongnams=gyeongnam,
-                           jejus=jeju
+                           seoul=seoul,
+                           busan=busan,
+                           daegu=daegu,
+                           incheon=incheon,
+                           gwangju=gwangju,
+                           daejeon=daejeon,
+                           ulsan=ulsan,
+                           sejong=sejong,
+                           gyeonggi=gyeonggi,
+                           gangwon=gangwon,
+                           chungbuk=chungbuk,
+                           chungnam=chungnam,
+                           jeonbuk=jeonbuk,
+                           jeonnam=jeonnam,
+                           gyeongbuk=gyeongbuk,
+                           gyeongnam=gyeongnam,
+                           jeju=jeju
                            )
 
 
@@ -273,3 +273,11 @@ def test_post():
 '''
 if __name__ == '__main__':
    app.run('0.0.0.0',port=5000,debug=True)
+
+
+
+
+
+
+
+
