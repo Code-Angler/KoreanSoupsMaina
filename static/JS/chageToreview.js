@@ -20,7 +20,7 @@ function changeReview() {
       let link_url = store[indexinLocal]["link_url"];
       let img_url = store[indexinLocal]["img_url"];
       backgroundImage = document.querySelector(
-        ".review-image-box"
+        ".review-map"
       ).style.backgroundImage = `url("${img_url}")`;
       document.querySelector(".title-review").textContent = title;
       document.querySelector(".address-review").textContent = address;
@@ -37,10 +37,14 @@ function changeToReview(index) {
 }
 
 function checkRevieOrLogin() {
-  document.querySelector(".login-icon").src = localStorage.getItem("src");
+  // document.querySelector(".login-icon").src = String(
+  //   localStorage.getItem("src")
+  // );
   const pageName = document.querySelector(".page-name")?.textContent;
   console.log(pageName);
-  if (pageName == "Review") changeReview();
+  if (pageName == "Review") {
+    changeReview();
+  }
 }
 
 window.onload = checkRevieOrLogin();

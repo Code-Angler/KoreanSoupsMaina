@@ -43,6 +43,19 @@
   background-position: center center;
   top: 0;
   z-index: 5;
+  animation: slide 2s ease-in-out 1s infinite;
+}
+
+@keyframes slide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 
 .nav-desc {

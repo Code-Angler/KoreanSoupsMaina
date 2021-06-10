@@ -31,10 +31,8 @@ function sign_in() {
       if (response["result"] == "success") {
         $.cookie("mytoken", response["token"], { path: "/" });
         window.location.replace("/");
-        localStorage.setItem("src", "../static/image/logincheck.svg");
       } else {
         alert(response["msg"]);
-        localStorage.setItem("src", "../static/image/login.svg");
       }
     },
   });
@@ -172,8 +170,6 @@ function check_dup() {
     },
   });
 }
-
-document.querySelector(".login-icon").src = "../static/image/logincheck.svg";
 
 $.cookie("visits");
 
