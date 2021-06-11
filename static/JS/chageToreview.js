@@ -43,6 +43,7 @@ function checkRevieOrLogin() {
     changeReview();
   }
 }
+document.querySelector(".login-icon").src = "../static/image/login.svg";
 
 function changeLoginIcon() {
   document.querySelector(".login-icon").src = localStorage.getItem("src");

@@ -2,6 +2,7 @@ from pymongo import MongoClient
 import jwt
 import datetime
 import hashlib
+from werkzeug.utils import secure_filename
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from datetime import datetime, timedelta
 
@@ -13,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 할 수 있습니다.
 SECRET_KEY = 'JINGUK'
 
-client = MongoClient('mongodb://test:test@13.124.154.57', 27017)
+client = MongoClient('mongodb://test:test@54.180.29.93', 27017)
 # client = MongoClient('localhost', 27017)
 db = client.koransoups
 
@@ -471,6 +472,31 @@ def check_dup():
     username_receive = request.form['username_give']
     exists = bool(db.users.find_one({"username": username_receive}))
     return jsonify({'result': 'success', 'exists': exists})
+
+@app.route('/update_profile', methods=['POST'])
+def save_img():
+    token_receive = request.cookies.get('mytoken')
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        username = payload["id"]
+        name_receive = request.form["name_give"]
+        about_receive = request.form["about_give"]
+        new_doc = {
+            "profile_name": name_receive,
+            "profile_info": about_receive
+        }
+        if 'file_give' in request.files:
+            file = request.files["file_give"]
+            filename = secure_filename(file.filename)
+            extension = filename.split(".")[-1]
+            file_path = f"profile_pics/{username}.{extension}"
+            file.save("./static/"+file_path)
+            new_doc["profile_pic"] = filename
+            new_doc["profile_pic_real"] = file_path
+        db.users.update_one({'username': payload['id']}, {'$set':new_doc})
+        return jsonify({"result": "success", 'msg': '프로필을 업데이트했습니다.'})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for("home"))
 
 
 

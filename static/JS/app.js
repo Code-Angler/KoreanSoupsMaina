@@ -69,3 +69,4 @@ function loginout() {
 function nobtn() {
   alert("로그인 또는 회원가입을 해주세요!");
 }
+
