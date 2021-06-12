@@ -27,6 +27,7 @@ function changeReview() {
       document.querySelector(".phone-review").textContent = phone;
       document.querySelector(".link-review").textContent = link_url;
       document.querySelector(".runtime-review").textContent = runTime;
+      document.querySelector(".link-review").href = link_url;
     },
   });
 }
@@ -43,11 +44,20 @@ function checkRevieOrLogin() {
     changeReview();
   }
 }
-document.querySelector(".login-icon").src = "../static/image/login.svg";
 
 function changeLoginIcon() {
   document.querySelector(".login-icon").src = localStorage.getItem("src");
 }
+
+// function onloadChecklogin() {
+//   var yum = getCookie("mytoken");
+//   if (yum) {
+//       localStorage.setItem("src", "../static/image/login.svg");
+//     };
+// }
+
+
+// window.onload = onloadChecklogin();
 
 window.onload = checkRevieOrLogin();
 window.onload = changeLoginIcon();

@@ -67,7 +67,7 @@
                     <div class="detail-email">
                         <img src="../static/image/email.svg">
                         <div class="detail-content-title">Link</div>
-                        <div class="detail-content link-review">{{ stores[0].link_url }}</div>
+                        <a class="detail-content link-review" href="{{ stores[0].link_url }}">{{ stores[0].link_url }}</a>
                     </div>
                     <div class="detail-runtime">
                         <img src="../static/image/runtime.svg">
@@ -113,39 +113,3 @@
 
 </body>
 </html>
-
-
-<!-- 민기님 파트 입니다.
-함수구현 관련 코드는 (id=reviews-box; id=title; id=soupReview) 이 세부분 참조 하시면 됩니다.
-관련 js는 reviews.js 로  연결해 두었습니다. -->
-
-{#<div class="input-group mb-3">#}
-{#                    <div class="input-group-prepend">#}
-{#                        <span class="input-group-text">제목</span>#}
-{#                    </div>#}
-{#                    <input type="text" class="form-control" id="title">#}
-{#                </div>#}
-{#                <div class="input-group mb-3">#}
-{#                    <div class="input-group-prepend">#}
-{#                        <span class="input-group-text">리뷰</span>#}
-{#                    </div>#}
-{#                    <textarea class="form-control" id="soupReview"#}
-{#                              cols="30"#}
-{#                              rows="5" placeholder="140자까지 입력할 수 있습니다."></textarea>#}
-{#                </div>#}
-{#                <div class="review">#}
-{#                    <button onclick="makeReview()" type="button" class="btn btn-primary">리뷰 작성하기</button>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="reviews">#}
-{#                <table class="table">#}
-{#                    <thead>#}
-{#                    <tr>#}
-{#                        <th scope="col">제목</th>#}
-{#                        <th scope="col">리뷰</th>#}
-{#                    </tr>#}
-{#                    </thead>#}
-{#                    <tbody id="reviews-box">#}
-{#                    </tbody>#}
-{#                </table>#}
-{#            </div>#}
